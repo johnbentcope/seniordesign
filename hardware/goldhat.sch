@@ -3,7 +3,7 @@ EELAYER 30 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
-Sheet 1 1
+Sheet 1 3
 Title ""
 Date ""
 Rev ""
@@ -16,23 +16,23 @@ $EndDescr
 $Comp
 L MCU_Texas_MSP430:MSP430G2553IRHB32 U?
 U 1 1 5E8F512E
-P 7650 2550
-F 0 "U?" H 7650 3831 50  0000 C CNN
-F 1 "MSP430G2553IRHB32" H 7650 3740 50  0000 C CNN
-F 2 "Package_DFN_QFN:Texas_S-PVQFN-N32_EP3.45x3.45mm" H 6500 1550 50  0001 C CIN
-F 3 "http://www.ti.com/lit/ds/symlink/msp430g2553.pdf" H 7650 2550 50  0001 C CNN
-	1    7650 2550
+P 8100 1800
+F 0 "U?" H 8100 3081 50  0000 C CNN
+F 1 "MSP430G2553IRHB32" H 8100 2990 50  0000 C CNN
+F 2 "Package_DFN_QFN:Texas_S-PVQFN-N32_EP3.45x3.45mm" H 6950 800 50  0001 C CIN
+F 3 "http://www.ti.com/lit/ds/symlink/msp430g2553.pdf" H 8100 1800 50  0001 C CNN
+	1    8100 1800
 	1    0    0    -1  
 $EndComp
 $Comp
 L Connector:Raspberry_Pi_2_3 J?
 U 1 1 5E8F67ED
-P 2650 2800
-F 0 "J?" H 2650 4281 50  0000 C CNN
-F 1 "NVIDIA_Jetson_Nano" H 2650 4190 50  0000 C CNN
-F 2 "" H 2650 2800 50  0001 C CNN
-F 3 "https://www.raspberrypi.org/documentation/hardware/raspberrypi/schematics/rpi_SCH_3bplus_1p0_reduced.pdf" H 2650 2800 50  0001 C CNN
-	1    2650 2800
+P 1900 2800
+F 0 "J?" H 1900 4281 50  0000 C CNN
+F 1 "NVIDIA_Jetson_Nano" H 1900 4190 50  0000 C CNN
+F 2 "" H 1900 2800 50  0001 C CNN
+F 3 "https://www.raspberrypi.org/documentation/hardware/raspberrypi/schematics/rpi_SCH_3bplus_1p0_reduced.pdf" H 1900 2800 50  0001 C CNN
+	1    1900 2800
 	1    0    0    -1  
 $EndComp
 $Comp
@@ -46,48 +46,16 @@ F 3 "~" H 9800 4800 50  0001 C CNN
 	1    9800 4800
 	1    0    0    -1  
 $EndComp
-$Comp
-L Connector:Conn_01x02_Female J?
-U 1 1 5E94AC7A
-P 9800 5200
-F 0 "J?" H 9828 5176 50  0000 L CNN
-F 1 "Motor A" H 9828 5085 50  0000 L CNN
-F 2 "" H 9800 5200 50  0001 C CNN
-F 3 "~" H 9800 5200 50  0001 C CNN
-	1    9800 5200
-	1    0    0    -1  
-$EndComp
-$Comp
-L Connector:Conn_01x02_Female J?
-U 1 1 5E94B72C
-P 9800 5500
-F 0 "J?" H 9828 5476 50  0000 L CNN
-F 1 "Motor B" H 9828 5385 50  0000 L CNN
-F 2 "" H 9800 5500 50  0001 C CNN
-F 3 "~" H 9800 5500 50  0001 C CNN
-	1    9800 5500
-	1    0    0    -1  
-$EndComp
-$Comp
-L Connector:Conn_01x02_Female J?
-U 1 1 5E94CD4B
-P 9800 5800
-F 0 "J?" H 9828 5776 50  0000 L CNN
-F 1 "Motor C" H 9828 5685 50  0000 L CNN
-F 2 "" H 9800 5800 50  0001 C CNN
-F 3 "~" H 9800 5800 50  0001 C CNN
-	1    9800 5800
-	1    0    0    -1  
-$EndComp
-$Comp
-L Connector:Conn_01x02_Female J?
-U 1 1 5E94CD51
-P 9800 6100
-F 0 "J?" H 9828 6076 50  0000 L CNN
-F 1 "Motor D" H 9828 5985 50  0000 L CNN
-F 2 "" H 9800 6100 50  0001 C CNN
-F 3 "~" H 9800 6100 50  0001 C CNN
-	1    9800 6100
-	1    0    0    -1  
-$EndComp
+$Sheet
+S 6250 3750 1400 2050
+U 5E94DDF9
+F0 "motors" 50
+F1 "motors.sch" 50
+$EndSheet
+$Sheet
+S 4300 3750 1400 2050
+U 5E94ECD4
+F0 "power" 50
+F1 "power.sch" 50
+$EndSheet
 $EndSCHEMATC

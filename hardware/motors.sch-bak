@@ -1,0 +1,60 @@
+EESchema Schematic File Version 4
+EELAYER 30 0
+EELAYER END
+$Descr A4 11693 8268
+encoding utf-8
+Sheet 2 2
+Title ""
+Date ""
+Rev ""
+Comp ""
+Comment1 ""
+Comment2 ""
+Comment3 ""
+Comment4 ""
+$EndDescr
+$Comp
+L Connector:Conn_01x02_Female J?
+U 1 1 5E94E945
+P 8150 2900
+F 0 "J?" H 8178 2876 50  0000 L CNN
+F 1 "Motor A" H 8178 2785 50  0000 L CNN
+F 2 "" H 8150 2900 50  0001 C CNN
+F 3 "~" H 8150 2900 50  0001 C CNN
+	1    8150 2900
+	1    0    0    -1  
+$EndComp
+$Comp
+L Connector:Conn_01x02_Female J?
+U 1 1 5E94E94B
+P 8150 3200
+F 0 "J?" H 8178 3176 50  0000 L CNN
+F 1 "Motor B" H 8178 3085 50  0000 L CNN
+F 2 "" H 8150 3200 50  0001 C CNN
+F 3 "~" H 8150 3200 50  0001 C CNN
+	1    8150 3200
+	1    0    0    -1  
+$EndComp
+$Comp
+L Connector:Conn_01x02_Female J?
+U 1 1 5E94E951
+P 8150 3500
+F 0 "J?" H 8178 3476 50  0000 L CNN
+F 1 "Motor C" H 8178 3385 50  0000 L CNN
+F 2 "" H 8150 3500 50  0001 C CNN
+F 3 "~" H 8150 3500 50  0001 C CNN
+	1    8150 3500
+	1    0    0    -1  
+$EndComp
+$Comp
+L Connector:Conn_01x02_Female J?
+U 1 1 5E94E957
+P 8150 3800
+F 0 "J?" H 8178 3776 50  0000 L CNN
+F 1 "Motor D" H 8178 3685 50  0000 L CNN
+F 2 "" H 8150 3800 50  0001 C CNN
+F 3 "~" H 8150 3800 50  0001 C CNN
+	1    8150 3800
+	1    0    0    -1  
+$EndComp
+$EndSCHEMATC
