@@ -46,4 +46,48 @@ F 3 "~" H 9800 4800 50  0001 C CNN
 	1    9800 4800
 	1    0    0    -1  
 $EndComp
+$Comp
+L Connector:Conn_01x02_Female J?
+U 1 1 5E94AC7A
+P 9800 5200
+F 0 "J?" H 9828 5176 50  0000 L CNN
+F 1 "Motor A" H 9828 5085 50  0000 L CNN
+F 2 "" H 9800 5200 50  0001 C CNN
+F 3 "~" H 9800 5200 50  0001 C CNN
+	1    9800 5200
+	1    0    0    -1  
+$EndComp
+$Comp
+L Connector:Conn_01x02_Female J?
+U 1 1 5E94B72C
+P 9800 5500
+F 0 "J?" H 9828 5476 50  0000 L CNN
+F 1 "Motor B" H 9828 5385 50  0000 L CNN
+F 2 "" H 9800 5500 50  0001 C CNN
+F 3 "~" H 9800 5500 50  0001 C CNN
+	1    9800 5500
+	1    0    0    -1  
+$EndComp
+$Comp
+L Connector:Conn_01x02_Female J?
+U 1 1 5E94CD4B
+P 9800 5800
+F 0 "J?" H 9828 5776 50  0000 L CNN
+F 1 "Motor C" H 9828 5685 50  0000 L CNN
+F 2 "" H 9800 5800 50  0001 C CNN
+F 3 "~" H 9800 5800 50  0001 C CNN
+	1    9800 5800
+	1    0    0    -1  
+$EndComp
+$Comp
+L Connector:Conn_01x02_Female J?
+U 1 1 5E94CD51
+P 9800 6100
+F 0 "J?" H 9828 6076 50  0000 L CNN
+F 1 "Motor D" H 9828 5985 50  0000 L CNN
+F 2 "" H 9800 6100 50  0001 C CNN
+F 3 "~" H 9800 6100 50  0001 C CNN
+	1    9800 6100
+	1    0    0    -1  
+$EndComp
 $EndSCHEMATC
