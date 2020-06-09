@@ -1,20 +1,6 @@
 # Senior Design
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+Let's make a robot.
 
 
 
