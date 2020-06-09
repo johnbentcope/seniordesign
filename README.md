@@ -1,4 +1,4 @@
-# seniordesign
+# Senior Design
 
 
 
