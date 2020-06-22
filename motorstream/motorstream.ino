@@ -1,17 +1,12 @@
 // On my UNO, I'm using these
-#define MSHCLK 5
-#define MSHENA 6
-#define MSHDTA 7
+#define MSHCLK 8
+#define MSHENA 12
+#define MSHDTA 2
 
-// On Goldhat they're as follows
-//#define MSHCLK 38
-//#define MSHENA 18
-//#define MSHDTA 19
-
-#define MA_ENA 10
-#define MB_ENA 12
-#define MC_ENA 9
-#define MD_ENA 13
+#define MA_ENA 3
+#define MB_ENA 5
+#define MC_ENA 6
+#define MD_ENA 9
 
 #define MA_IN1 0x80;
 #define MA_IN2 0x40;
@@ -55,7 +50,7 @@ void loop() {
   // Serial enable is active low
   // Hold it low while we shift in data
   payload = 1;
-  for(int i = 0; i < 8; i++){
+  for(int i = 0; i <= 8; i++){
     digitalWrite(MSHENA, LOW);
     shiftOut(MSHDTA, MSHCLK, LSBFIRST, payload);
     digitalWrite(MSHENA, HIGH);
@@ -63,38 +58,40 @@ void loop() {
     payload <<= 1;
   }
 
-  // tTggle the bits in payload for maximum blink
-  payload ^= 0xFF;
-
-  delay(200);
-
-  for(int i = 0; i < 256; i++)
+  for(int m = 0; m < 4; m++)
   {
-    analogWrite(MA_ENA, i);
-    delay(5);
-  }
-  for(int i = 0; i < 256; i++)
-  {
-    analogWrite(MA_ENA, 255-i);
-    delay(1);
+    int mtr;
+    switch(m)
+    {
+      case(0):
+        mtr = MA_ENA;
+        break;
+      case(1):
+        mtr = MB_ENA;
+        break;
+      case(2):
+        mtr = MC_ENA;
+        break;
+      case(3):
+        mtr = MD_ENA;
+        break;
+      default:
+        mtr = MA_ENA;
+        break;
+    }
+  
+    int i;
+    for(i = 0; i < 256; i++)
+    {
+      analogWrite(mtr, i);
+      delay(5);
+    }
+    for(; i >= 0; i--)
+    {
+      analogWrite(mtr, i);
+      delay(1);
+    }
+    
   }
   
-  delay(200);
-  
-  for(int i = 0; i < 256; i++)
-  {
-    analogWrite(MB_ENA, i);
-    delay(5);
-  }
-  for(int i = 0; i < 256; i++)
-  {
-    analogWrite(MB_ENA, 255-i);
-    delay(1);
-  }
-
-  delay(200);
-
-  // Wait
-  delay(1000);
-
 }
