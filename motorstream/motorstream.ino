@@ -47,51 +47,71 @@ void setup() {
 
 void loop() {
 
-  // Serial enable is active low
-  // Hold it low while we shift in data
-  payload = 1;
-  for(int i = 0; i <= 8; i++){
-    digitalWrite(MSHENA, LOW);
-    shiftOut(MSHDTA, MSHCLK, LSBFIRST, payload);
-    digitalWrite(MSHENA, HIGH);
-    delay(500);
-    payload <<= 1;
-  }
+  // Loop through the four possible motor control things and rev the ENA pin
 
-  for(int m = 0; m < 4; m++)
+  for(int m = 1; m < 3; m++)
   {
-    int mtr;
-    switch(m)
-    {
-      case(0):
-        mtr = MA_ENA;
-        break;
-      case(1):
-        mtr = MB_ENA;
-        break;
-      case(2):
-        mtr = MC_ENA;
-        break;
-      case(3):
-        mtr = MD_ENA;
-        break;
-      default:
-        mtr = MA_ENA;
-        break;
+
+    payload = 0;
+    payload = ((m & 3) << 4) | (m&3);
+
+    
+    for(int i = 0; i <= 8; i++){
+      digitalWrite(MSHENA, LOW);
+      shiftOut(MSHDTA, MSHCLK, LSBFIRST, payload);
+      digitalWrite(MSHENA, HIGH);
     }
-  
     int i;
     for(i = 0; i < 256; i++)
     {
-      analogWrite(mtr, i);
-      delay(5);
+      analogWrite(MA_ENA, i);
+      analogWrite(MC_ENA, i);
+      delay(15);
+    }
+    for(; i >= 50; i--)
+    {
+      analogWrite(MA_ENA, i);
+      analogWrite(MC_ENA, i);
+      delay(15);
+    }
+    for(i = 50; i < 150; i++)
+    {
+      analogWrite(MA_ENA, i);
+      analogWrite(MC_ENA, i);
+      delay(15);
+    }
+    for(; i >= 50; i--)
+    {
+      analogWrite(MA_ENA, i);
+      analogWrite(MC_ENA, i);
+      delay(15);
+    }
+    for(i = 50; i < 150; i++)
+    {
+      analogWrite(MA_ENA, i);
+      analogWrite(MC_ENA, i);
+      delay(15);
+    }
+    for(; i >= 50; i--)
+    {
+      analogWrite(MA_ENA, i);
+      analogWrite(MC_ENA, i);
+      delay(15);
+    }
+    for(i = 50; i < 150; i++)
+    {
+      analogWrite(MA_ENA, i);
+      analogWrite(MC_ENA, i);
+      delay(15);
     }
     for(; i >= 0; i--)
     {
-      analogWrite(mtr, i);
-      delay(1);
+      analogWrite(MA_ENA, i);
+      analogWrite(MC_ENA, i);
+      delay(15);
     }
     
+    delay(500);
   }
   
 }
