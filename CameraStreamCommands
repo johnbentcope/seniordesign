@@ -1,0 +1,20 @@
+Start Command, Sending One Video Stream - Port 5000
+---------------------------------------------------
+
+gst-launch-1.0 nvarguscamerasrc sensor_id=0 sensor_mode=0 ! 'video/x-raw(memory:NVMM), width=816, height=616, framerate=21/1' ! videoconvert ! videoscale ! videorate ! omxh264enc control-rate=2 bitrate=4000000 ! 'video/x-h264, framerate=21/1, stream-format=byte-stream' ! rtph264pay mtu=1400 ! udpsink host=127.0.0.1 port=5000 sync=false async=false
+
+Start Command, Sending Two Video Streams - Port 5000 and 5100
+-------------------------------------------------------------
+
+gst-launch-1.0 \
+nvarguscamerasrc sensor_id=0 sensor_mode=0 ! 'video/x-raw(memory:NVMM), width=816, height=616, framerate=21/1' ! videoconvert ! videoscale ! videorate ! omxh264enc control-rate=2 bitrate=4000000 ! 'video/x-h264, framerate=21/1, stream-format=byte-stream' ! rtph264pay mtu=1400 ! udpsink host=127.0.0.1 port=5000 sync=false async=false \
+nvarguscamerasrc sensor_id=1 sensor_mode=0 ! 'video/x-raw(memory:NVMM), width=816, height=616, framerate=21/1' ! videoconvert ! videoscale ! videorate ! omxh264enc control-rate=2 bitrate=4000000 ! 'video/x-h264, framerate=21/1, stream-format=byte-stream' ! rtph264pay mtu=1400 ! udpsink host=127.0.0.1 port=5100 sync=false async=false
+
+
+Receiving - Ports 5000 and 5100
+-------------------------------
+gst-launch-1.0 udpsrc port=5000 ! application/x-rtp,encoding-name=H264,payload=96 ! rtph264depay ! h264parse ! queue ! avdec_h264 ! xvimagesink sync=false async=false -e
+
+gst-launch-1.0 udpsrc port=5100 ! application/x-rtp,encoding-name=H264,payload=96 ! rtph264depay ! h264parse ! queue ! avdec_h264 ! xvimagesink sync=false async=false -e
+
+
