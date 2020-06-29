@@ -188,13 +188,11 @@ public class RiftDisp extends PApplet {
     
     // Draw once for each eye
     pushMatrix();
-    translate(0,960*2);
-    rotate(-HALF_PI);
+    translate(0,0);
     image(s[0], 0, 0);
     popMatrix();
     pushMatrix();
-    translate(0,960);
-    rotate(-HALF_PI);
+    translate(0,width/2);
     image(s[1], 0, 0);
     popMatrix();
   }
