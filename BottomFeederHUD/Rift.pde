@@ -19,10 +19,18 @@ public class Rift extends OpenHMD
   
   public float[] getRot()
   {
+    // Ping the Rift and tell it to get data ready for us (maybe, I think that's what ctx_update does)
     ohmd_ctx_update(ctx);
-    float[] rot = ohmd_device_getf(dev, 1);
+    
+    // getf() gets a quaternion representing headset position
+    Quaternion q = new Quaternion(ohmd_device_getf(dev, 1));
+    
+    
     //for (float f : rot)
     //System.out.println(f + ", " + frameCount);
-    return rot;
+    
+    // Convert that quaternion into euler angles
+    
+  return q.GetEulerAngles();
   }
 }

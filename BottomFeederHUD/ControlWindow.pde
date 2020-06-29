@@ -13,19 +13,18 @@ class ControlWindow extends PApplet
     size(400,400);
   }
   
-  void setup(){}
+  void setup()
+  {
+    surface.setTitle("Control Panel");
+  }
   
   void draw()
   {
     background(0);
-    ellipse(mouseX,mouseY, 20,20);
+    ellipse(mouseX, mouseY, 20, 20);
   }
   
-  void mousePressed()
-  {
-    println(mouseX, mouseY);
-  }
-  
+  // Quit if q is pressed while control panel has focus
   void keyPressed()
   {
     if( key == 'q' || key == 'Q')
