@@ -25,10 +25,6 @@ public class Rift extends OpenHMD
     // getf() gets a quaternion representing headset position
     Quaternion q = new Quaternion(ohmd_device_getf(dev, 1));
     
-    
-    //for (float f : rot)
-    //System.out.println(f + ", " + frameCount);
-    
     // Convert that quaternion into euler angles
     
   return q.GetEulerAngles();

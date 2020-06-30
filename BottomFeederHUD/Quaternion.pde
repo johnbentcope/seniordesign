@@ -37,10 +37,13 @@ class Quaternion
       {
           float adbc = w*z - x*y;
           float acbd = w*y - x*z;
-          angles[0] = atan2(2*adbc, 1 - 2*(z2+x2));
-          angles[1] = asin(2*abcd/unitLength);
-          angles[2] = atan2(2*acbd, 1 - 2*(y2+x2));
+          angles[0] = atan2(2*adbc, 1 - 2*(z2+x2)); // ROLL
+          angles[1] = asin(2*abcd/unitLength);      // 
+          angles[2] = atan2(2*acbd, 1 - 2*(y2+x2)); // PITCH
       }
+      
+      println("yaw: " + angles[0] + "| pitch: " + angles[1] + "| roll: " + angles[2] );
+      
       return angles;
   }
 }
