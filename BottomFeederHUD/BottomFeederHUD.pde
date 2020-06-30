@@ -1,3 +1,7 @@
+// John Cope
+// For Senior Design
+// June 29, 2020
+
 // These imports are for Barrel Distortion for the Rift
 import camera3D.Camera3D;
 import camera3D.generators.*;
@@ -13,15 +17,7 @@ void settings()
 {
   // This sets the Oculus Rift's headset up.
   // It must be the secondary monitor, and it must be oriented as landscape
-  //fullScreen(P3D, 2);
-  size(400,400,P
-  // Set up a new Barrel Distortion Shader
-  camera3D = new Camera3D(this);
-  BarrelDistortionGenerator generator = camera3D.renderBarrelDistortion().setDivergence(1);
-  generator.setBarrelDistortionCoefficients(0.22,0.24);
-  
-  camera3D.setBackgroundColor(255);
-  camera3D.enableSaveFrame('s',"debug");
+  fullScreen(P3D, 2);
   
   // Initialize the Rift API
   r = new Rift();
@@ -33,6 +29,16 @@ void setup()
   controlPanel = new ControlWindow(this);
   String[] args = {"Rift"};
   PApplet.runSketch(args, controlPanel);
+  
+  // Set up a new Barrel Distortion Shader
+  camera3D = new Camera3D(this);
+  BarrelDistortionGenerator generator = camera3D.renderBarrelDistortion().setDivergence(1);
+  // Change these numbers to learn how this works. Set them to 0, 0 for no distortion.
+  generator.setBarrelDistortionCoefficients(0.22, 0.24);
+  
+  camera3D.setBackgroundColor(255);
+  camera3D.enableSaveFrame('s',"debug");
+
 }
 
 void draw()
