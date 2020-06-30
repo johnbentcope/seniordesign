@@ -10,7 +10,7 @@ class ControlWindow extends PApplet
   
   void settings()
   {
-    size(400,400);
+    size(40,40);
   }
   
   void setup()
