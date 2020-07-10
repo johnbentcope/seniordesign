@@ -8,6 +8,7 @@ import camera3D.generators.*;
 Camera3D camera3D;
 
 PImage frontside; 
+PImage backside; 
 
 // Create a window on the main desktop
 ControlWindow controlPanel;
@@ -35,6 +36,7 @@ void settings()
 
   vector = new PVector(0, 0, 0);
   frontside = loadImage("frontside.png");
+  backside = loadImage("backside.png");
 }
 
 void setup()
@@ -78,9 +80,15 @@ void draw()
   rotateY(-ro[1]);
   rotateZ(-ro[2]);
   rotateY(PI/2);
+  rotateZ(PI/2);
+  pushMatrix();
+  scale(-1,1,1);
   shape(screen(frontside));
+  popMatrix();
+  pushMatrix();
   scale(1,1,-1);
-  shape(screen(frontside));
+  shape(screen(backside));
+  popMatrix();
   popMatrix();
 }
 
@@ -104,10 +112,10 @@ PShape screen(PImage image) {
       int ii = i+1;
       int jj = j+1;
 
-      ret.vertex( i*d, j*d,  scrZ(r,  i*d,  j*d),);
-      ret.vertex(ii*d, j*d,  scrZ(r, ii*d,  j*d),);
-      ret.vertex(ii*d, jj*d, scrZ(r, ii*d, jj*d),);
-      ret.vertex( i*d, jj*d, scrZ(r,  i*d, jj*d),);
+      ret.vertex( i*d, j*d,  scrZ(r,  i*d,  j*d),i*step+image.width/2, j*step+image.height/2);
+      ret.vertex(ii*d, j*d,  scrZ(r, ii*d,  j*d),ii*step+image.width/2, j*step+image.height/2);
+      ret.vertex(ii*d, jj*d, scrZ(r, ii*d, jj*d),ii*step+image.width/2, jj*step+image.height/2);
+      ret.vertex( i*d, jj*d, scrZ(r,  i*d, jj*d),i*step+image.width/2, jj*step+image.height/2);
     }
   }
 
