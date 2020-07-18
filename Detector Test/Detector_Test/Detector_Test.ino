@@ -1,10 +1,14 @@
 // Metal detector code
 // This is what is programmed onto the UNO
 
-//decalre pins
-const byte pin_pulse=A0;  //set pulse pin
-const byte pin_cap  =A1;  //set read pin
-int ledPin = 13;
+//decalre pulse and cap pins
+const byte pin_pulse1 = A0;
+const byte pin_cap1   = A1;
+const byte pin_pulse2 = A2;  
+const byte pin_cap2   = A3;  
+const byte pin_pulse3 = A4;  
+const byte pin_cap3   = A5;
+int ledPin = 7;
 
 //declare variables
 const byte npulse = 2;  //number of pulses before measurement
@@ -15,21 +19,31 @@ double sum = 0;         //holds sum to calculate average
 
 //declare functions
 void calibrate();
-void measure();
+void measure1();
+void measure2();
+void measure3();
 
 void setup() {
   Serial.begin(9600);   //start serial
   while(!Serial);
   //set outputs
   pinMode(ledPin, OUTPUT);    
-  pinMode(pin_pulse, OUTPUT); 
-  digitalWrite(pin_pulse, LOW);
-  
+  pinMode(pin_pulse1, OUTPUT); 
+  digitalWrite(pin_pulse1, LOW);
+  pinMode(pin_pulse2, OUTPUT); 
+  digitalWrite(pin_pulse2, LOW);
+  pinMode(pin_pulse3, OUTPUT); 
+  digitalWrite(pin_pulse3, LOW);
 }//end of function
 
 /////////////////////End Setup function//////////////////////////////
 
 void loop() {
+  /*digitalWrite(7, HIGH);
+  delay(1000);
+  digitalWrite(7, LOW);
+  delay(1000);*/
+  
   while(Serial.available()<1) //Wait for 1 bytes to arrive
   {
     //do nothing
@@ -38,11 +52,13 @@ void loop() {
   //get message
   char canidetect = Serial.read();
   switch (canidetect){
-    case 's':
-      measure();
+    case 'a':
+      measure1();
       break;
-    case 'f':
-      Serial.write(69);
+    case 'b':
+      measure2();
+    case 'c':
+      measure3();
     default:
       break;
   }//end switch
@@ -86,25 +102,75 @@ void loop() {
 */
 ///////////////////////End Calibrate function///////////////////////////
 
-void measure(){
+void measure1(){
   //reset the capacitor
-  pinMode(pin_cap,OUTPUT);
-  digitalWrite(pin_cap,LOW);
+  pinMode(pin_cap1,OUTPUT);
+  digitalWrite(pin_cap1,LOW);
   delayMicroseconds(500);
-  pinMode(pin_cap,INPUT);
+  pinMode(pin_cap1,INPUT);
   //apply pulses
   for (int ipulse = 0; ipulse < npulse; ipulse++) {
-    digitalWrite(pin_pulse,HIGH); //takes 3.5 microseconds
+    digitalWrite(pin_pulse1,HIGH); //takes 3.5 microseconds
     delayMicroseconds(3);
-    digitalWrite(pin_pulse,LOW);  //takes 3.5 microseconds
+    digitalWrite(pin_pulse1,LOW);  //takes 3.5 microseconds
     delayMicroseconds(3);
   }
   //read the charge on the capacitor
-  measurement = analogRead(pin_cap); //takes 13x8=104 microseconds
+  measurement = analogRead(pin_cap1); //takes 13x8=104 microseconds
   int leftmeas = measurement >> 8;
   int rightmeas = measurement;
   Serial.write(leftmeas);
   Serial.write(rightmeas);
+  pinMode(pin_cap1,OUTPUT);
+  digitalWrite(pin_cap1,LOW);
 }//end of function
 
-//////////////////////End Measure function/////////////////////////
+//////////////////////End Measure1 function/////////////////////////
+void measure2(){
+  //reset the capacitor
+  pinMode(pin_cap2,OUTPUT);
+  digitalWrite(pin_cap2,LOW);
+  delayMicroseconds(500);
+  pinMode(pin_cap2,INPUT);
+  //apply pulses
+  for (int ipulse = 0; ipulse < npulse; ipulse++) {
+    digitalWrite(pin_pulse2,HIGH); //takes 3.5 microseconds
+    delayMicroseconds(3);
+    digitalWrite(pin_pulse2,LOW);  //takes 3.5 microseconds
+    delayMicroseconds(3);
+  }
+  //read the charge on the capacitor
+  measurement = analogRead(pin_cap2); //takes 13x8=104 microseconds
+  int leftmeas = measurement >> 8;
+  int rightmeas = measurement;
+  Serial.write(leftmeas);
+  Serial.write(rightmeas);
+  pinMode(pin_cap2,OUTPUT);
+  digitalWrite(pin_cap2,LOW);
+}//end of function
+
+//////////////////////End Measure2 function/////////////////////////
+void measure3(){
+  //reset the capacitor
+  pinMode(pin_cap3,OUTPUT);
+  digitalWrite(pin_cap3,LOW);
+  delayMicroseconds(500);
+  pinMode(pin_cap3,INPUT);
+  //apply pulses
+  for (int ipulse = 0; ipulse < npulse; ipulse++) {
+    digitalWrite(pin_pulse3,HIGH); //takes 3.5 microseconds
+    delayMicroseconds(3);
+    digitalWrite(pin_pulse3,LOW);  //takes 3.5 microseconds
+    delayMicroseconds(3);
+  }
+  //read the charge on the capacitor
+  measurement = analogRead(pin_cap3); //takes 13x8=104 microseconds
+  int leftmeas = measurement >> 8;
+  int rightmeas = measurement;
+  Serial.write(leftmeas);
+  Serial.write(rightmeas);
+  pinMode(pin_cap3,OUTPUT);
+  digitalWrite(pin_cap3,LOW);
+}//end of function
+
+//////////////////////End Measure3 function/////////////////////////
