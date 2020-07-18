@@ -57,8 +57,10 @@ void loop() {
       break;
     case 'b':
       measure2();
+      break;
     case 'c':
       measure3();
+      break;
     default:
       break;
   }//end switch
