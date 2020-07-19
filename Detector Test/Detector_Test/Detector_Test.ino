@@ -16,6 +16,7 @@ int nmeas=256;          //number if calibration measurements to take
 int measurement;        //latest measurement value
 int magnum;             //average of measurements during calibration
 double sum = 0;         //holds sum to calculate average
+char start;
 
 //declare functions
 void calibrate();
@@ -39,11 +40,6 @@ void setup() {
 /////////////////////End Setup function//////////////////////////////
 
 void loop() {
-  /*digitalWrite(7, HIGH);
-  delay(1000);
-  digitalWrite(7, LOW);
-  delay(1000);*/
-  
   while(Serial.available()<1) //Wait for 1 bytes to arrive
   {
     //do nothing
@@ -119,8 +115,8 @@ void measure1(){
   }
   //read the charge on the capacitor
   measurement = analogRead(pin_cap1); //takes 13x8=104 microseconds
-  int leftmeas = measurement >> 8;
-  int rightmeas = measurement;
+  unsigned int leftmeas = measurement >> 8;
+  unsigned int rightmeas = measurement;
   Serial.write(leftmeas);
   Serial.write(rightmeas);
   pinMode(pin_cap1,OUTPUT);
@@ -143,8 +139,8 @@ void measure2(){
   }
   //read the charge on the capacitor
   measurement = analogRead(pin_cap2); //takes 13x8=104 microseconds
-  int leftmeas = measurement >> 8;
-  int rightmeas = measurement;
+  unsigned int leftmeas = measurement >> 8;
+  unsigned int rightmeas = measurement;
   Serial.write(leftmeas);
   Serial.write(rightmeas);
   pinMode(pin_cap2,OUTPUT);
@@ -167,8 +163,8 @@ void measure3(){
   }
   //read the charge on the capacitor
   measurement = analogRead(pin_cap3); //takes 13x8=104 microseconds
-  int leftmeas = measurement >> 8;
-  int rightmeas = measurement;
+  unsigned int leftmeas = measurement >> 8;
+  unsigned int rightmeas = measurement;
   Serial.write(leftmeas);
   Serial.write(rightmeas);
   pinMode(pin_cap3,OUTPUT);

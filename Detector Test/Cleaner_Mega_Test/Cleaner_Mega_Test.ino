@@ -35,18 +35,11 @@ void loop() {
       }
     } //End While
     int magnum2=Serial2.read();  //Read byte
-    
-    Serial.println("2 bytes recieved");
-    Serial.print("byte1: "); 
-    Serial.println(magnum1);
-    Serial.print("byte2: ");
-    Serial.println(magnum2);
-  
-    
+
     int magnum = (magnum1 << 8) + magnum2;
-    Serial.print("measurement recieved: ");
-    Serial.println(magnum);
-    Serial.println();
+    Serial.print("Coil 1: ");
+    Serial.print(magnum);
+    
   
     //Tell detector to measure coil 2 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
     Serial2.print('b');
@@ -70,20 +63,11 @@ void loop() {
       }
     } //End While
     magnum2=Serial2.read();  //Read byte
-    
-    Serial.println("2 bytes recieved");
-    Serial.print("byte1: "); 
-    Serial.println(magnum1);
-    Serial.print("byte2: ");
-    Serial.println(magnum2);
-  
-    
+
     magnum = (magnum1 << 8) + magnum2;
-    Serial.print("measurement recieved: ");
-    Serial.println(magnum);
-    Serial.println();
-  
-  
+    Serial.print("    Coil 2: ");
+    Serial.print(magnum);
+
     //Tell detector to measure coil 3 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx 
     Serial2.print('c');
     
@@ -106,19 +90,10 @@ void loop() {
       }
     } //End While
     magnum2=Serial2.read();  //Read byte
-    
-    Serial.println("2 bytes recieved");
-    Serial.print("byte1: "); 
-    Serial.println(magnum1);
-    Serial.print("byte2: ");
-    Serial.println(magnum2);
-  
-    
+ 
     magnum = (magnum1 << 8) + magnum2;
-    Serial.print("measurement recieved: ");
-    Serial.println(magnum);
-    Serial.println();
-    Serial.print("xxxxxxxxxxxxxxxxxxx end of 3 measures xxxxxxxxxxxxxxxxxxxx ");
+    Serial.print("    Coil 3: ");
+    Serial.print(magnum);
     Serial.println();
   }//End While
   
