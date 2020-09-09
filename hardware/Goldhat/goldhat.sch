@@ -1,0 +1,258 @@
+EESchema Schematic File Version 5
+EELAYER 34 0
+EELAYER END
+$Descr A4 11693 8268
+encoding utf-8
+Sheet 1 7
+Title "BOTTOMFEEDER"
+Date "2020-05-02"
+Rev "A"
+Comp "UCF EECS Senior Design; Spring/Summer 2020"
+Comment1 "Tyler Rose"
+Comment2 "Sarah Reim"
+Comment3 "T Davis"
+Comment4 "John Cope"
+Comment5 ""
+Comment6 ""
+Comment7 ""
+Comment8 ""
+Comment9 ""
+$EndDescr
+Wire Wire Line
+	1600 3950 1900 3950
+Wire Wire Line
+	1600 4050 1900 4050
+Wire Wire Line
+	3300 3750 4100 3750
+Wire Wire Line
+	3300 3850 4100 3850
+Wire Wire Line
+	3300 3950 4100 3950
+Wire Wire Line
+	3300 4050 4100 4050
+Wire Wire Line
+	3300 4150 4100 4150
+Wire Wire Line
+	5000 5050 5000 5500
+Wire Wire Line
+	5500 3300 6300 3300
+Wire Wire Line
+	5500 3400 6300 3400
+Wire Wire Line
+	5500 3500 6300 3500
+Wire Wire Line
+	5500 3700 6300 3700
+Wire Wire Line
+	5500 3800 6300 3800
+Wire Wire Line
+	5500 3900 6300 3900
+Wire Wire Line
+	5500 4100 6300 4100
+Wire Wire Line
+	5500 4200 6300 4200
+Wire Wire Line
+	5500 4300 6300 4300
+Wire Wire Line
+	5500 4500 6300 4500
+Wire Wire Line
+	5500 4600 6300 4600
+Wire Wire Line
+	5500 4700 6300 4700
+Wire Wire Line
+	5500 6250 5800 6250
+Wire Wire Line
+	5700 6050 5700 6150
+Wire Wire Line
+	5700 6150 5800 6150
+Wire Wire Line
+	5700 6350 5800 6350
+Wire Wire Line
+	5700 6450 5700 6350
+Wire Wire Line
+	7700 3200 8100 3200
+Wire Wire Line
+	7700 3300 8100 3300
+Wire Wire Line
+	7700 3700 8100 3700
+Wire Wire Line
+	7700 3800 8100 3800
+Wire Wire Line
+	7700 4200 8100 4200
+Wire Wire Line
+	7700 4300 8100 4300
+Wire Wire Line
+	7700 4700 8100 4700
+Wire Wire Line
+	7700 4800 8100 4800
+$Comp
+L power:+5V #PWR01
+U 1 1 5EBF7935
+P 5700 6050
+F 0 "#PWR01" H 5700 5900 50  0001 C CNN
+F 1 "+5V" H 5715 6220 50  0000 C CNN
+F 2 "" H 5700 6050 50  0001 C CNN
+F 3 "" H 5700 6050 50  0001 C CNN
+	1    5700 6050
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR02
+U 1 1 5EBF7D11
+P 5700 6450
+F 0 "#PWR02" H 5700 6200 50  0001 C CNN
+F 1 "GND" H 5705 6280 50  0000 C CNN
+F 2 "" H 5700 6450 50  0001 C CNN
+F 3 "" H 5700 6450 50  0001 C CNN
+	1    5700 6450
+	1    0    0    -1  
+$EndComp
+$Comp
+L Connector_Generic:Conn_01x02 J1
+U 1 1 5EC1F5A9
+P 1400 4050
+F 0 "J1" H 1320 3730 50  0000 C CNN
+F 1 "COIL" H 1320 3821 50  0000 C CNN
+F 2 "TerminalBlock:TerminalBlock_bornier-2_P5.08mm" H 1400 4050 50  0001 C CNN
+F 3 "~" H 1400 4050 50  0001 C CNN
+	1    1400 4050
+	-1   0    0    1   
+$EndComp
+$Comp
+L Connector_Generic:Conn_01x02 J3
+U 1 1 5EBC9C98
+P 8300 3200
+F 0 "J3" H 8220 2880 50  0000 C CNN
+F 1 "MOTOR_A" H 8220 2971 50  0000 C CNN
+F 2 "TerminalBlock:TerminalBlock_bornier-2_P5.08mm" H 8300 3200 50  0001 C CNN
+F 3 "~" H 8300 3200 50  0001 C CNN
+	1    8300 3200
+	1    0    0    -1  
+$EndComp
+$Comp
+L Connector_Generic:Conn_01x02 J4
+U 1 1 5EBCB950
+P 8300 3700
+F 0 "J4" H 8220 3380 50  0000 C CNN
+F 1 "MOTOR_B" H 8220 3471 50  0000 C CNN
+F 2 "TerminalBlock:TerminalBlock_bornier-2_P5.08mm" H 8300 3700 50  0001 C CNN
+F 3 "~" H 8300 3700 50  0001 C CNN
+	1    8300 3700
+	1    0    0    -1  
+$EndComp
+$Comp
+L Connector_Generic:Conn_01x02 J5
+U 1 1 5EBCC19F
+P 8300 4200
+F 0 "J5" H 8220 3880 50  0000 C CNN
+F 1 "MOTOR_C" H 8220 3971 50  0000 C CNN
+F 2 "TerminalBlock:TerminalBlock_bornier-2_P5.08mm" H 8300 4200 50  0001 C CNN
+F 3 "~" H 8300 4200 50  0001 C CNN
+	1    8300 4200
+	1    0    0    -1  
+$EndComp
+$Comp
+L Connector_Generic:Conn_01x02 J6
+U 1 1 5EBCD073
+P 8300 4700
+F 0 "J6" H 8220 4380 50  0000 C CNN
+F 1 "MOTOR_D" H 8220 4471 50  0000 C CNN
+F 2 "TerminalBlock:TerminalBlock_bornier-2_P5.08mm" H 8300 4700 50  0001 C CNN
+F 3 "~" H 8300 4700 50  0001 C CNN
+	1    8300 4700
+	1    0    0    -1  
+$EndComp
+$Comp
+L Connector_Generic:Conn_01x03 J2
+U 1 1 5EBD431D
+P 6000 6250
+F 0 "J2" H 6080 6293 50  0000 L CNN
+F 1 "PRESSURE_CONN" H 6080 6203 50  0000 L CNN
+F 2 "TerminalBlock:TerminalBlock_bornier-3_P5.08mm" H 6000 6250 50  0001 C CNN
+F 3 "~" H 6000 6250 50  0001 C CNN
+	1    6000 6250
+	1    0    0    -1  
+$EndComp
+$Sheet
+S 4100 3000 1400 2050
+U 5EAECEED
+F0 "control" 50
+F1 "control.sch" 50
+F2 "DET_EN" O L 4100 4050 50 
+F3 "ENA_A" O R 5500 3500 50 
+F4 "ENA_B" O R 5500 3900 50 
+F5 "ENA_C" O R 5500 4300 50 
+F6 "ENA_D" O R 5500 4700 50 
+F7 "DET_MISO" I L 4100 3950 50 
+F8 "DET_MOSI" O L 4100 3850 50 
+F9 "DET_SCLK" O L 4100 3750 50 
+F10 "~DET_CLR" O L 4100 4150 50 
+F11 "IN2_D" O R 5500 4600 50 
+F12 "IN1_D" O R 5500 4500 50 
+F13 "IN2_C" O R 5500 4200 50 
+F14 "IN1_C" O R 5500 4100 50 
+F15 "IN2_B" O R 5500 3800 50 
+F16 "IN1_B" O R 5500 3700 50 
+F17 "IN2_A" O R 5500 3400 50 
+F18 "IN1_A" O R 5500 3300 50 
+F19 "PRESSURE" I B 5000 5050 50 
+$EndSheet
+$Sheet
+S 1900 3000 1400 2050
+U 5EB25BC1
+F0 "detector" 50
+F1 "detector.sch" 50
+F2 "~DET_CLR" I R 3300 4150 50 
+F3 "DET_EN" I R 3300 4050 50 
+F4 "DET_MISO" O R 3300 3950 50 
+F5 "DET_SCLK" I R 3300 3750 50 
+F6 "DET_MOSI" I R 3300 3850 50 
+F7 "COIL_2" B L 1900 4050 50 
+F8 "COIL_1" B L 1900 3950 50 
+$EndSheet
+$Sheet
+S 4100 600  1400 2050
+U 5EBF9901
+F0 "leds" 50
+F1 "leds.sch" 50
+$EndSheet
+$Sheet
+S 6300 3000 1400 2050
+U 5E94DDF9
+F0 "motors" 50
+F1 "motors.sch" 50
+F2 "IN1_A" I L 6300 3300 50 
+F3 "IN2_A" I L 6300 3400 50 
+F4 "ENA_A" I L 6300 3500 50 
+F5 "IN1_B" I L 6300 3700 50 
+F6 "IN2_B" I L 6300 3800 50 
+F7 "ENA_B" I L 6300 3900 50 
+F8 "IN1_C" I L 6300 4100 50 
+F9 "IN2_C" I L 6300 4200 50 
+F10 "ENA_C" I L 6300 4300 50 
+F11 "IN1_D" I L 6300 4500 50 
+F12 "IN2_D" I L 6300 4600 50 
+F13 "ENA_D" I L 6300 4700 50 
+F14 "M1_D_OUT" O R 7700 4700 50 
+F15 "M2_D_OUT" O R 7700 4800 50 
+F16 "M1_A_OUT" O R 7700 3200 50 
+F17 "M2_A_OUT" O R 7700 3300 50 
+F18 "M1_B_OUT" O R 7700 3700 50 
+F19 "M2_B_OUT" O R 7700 3800 50 
+F20 "M1_C_OUT" O R 7700 4200 50 
+F21 "M2_C_OUT" O R 7700 4300 50 
+$EndSheet
+$Sheet
+S 1900 5500 1400 2050
+U 5E94ECD4
+F0 "power" 50
+F1 "power.sch" 50
+$EndSheet
+$Sheet
+S 4100 5500 1400 2050
+U 5EBF3791
+F0 "pressuresensor" 50
+F1 "pressuresensor.sch" 50
+F2 "Sense" I R 5500 6250 50 
+F3 "PRESSURE" O T 5000 5500 50 
+$EndSheet
+$EndSCHEMATC

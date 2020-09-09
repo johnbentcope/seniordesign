@@ -1,0 +1,4 @@
+coil Board
+2 Layer
+1 oz
+64 x 64

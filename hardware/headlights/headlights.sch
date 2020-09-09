@@ -1,0 +1,252 @@
+EESchema Schematic File Version 5
+EELAYER 34 0
+EELAYER END
+$Descr A4 11693 8268
+encoding utf-8
+Sheet 1 1
+Title ""
+Date ""
+Rev ""
+Comp ""
+Comment1 ""
+Comment2 ""
+Comment3 ""
+Comment4 ""
+Comment5 ""
+Comment6 ""
+Comment7 ""
+Comment8 ""
+Comment9 ""
+$EndDescr
+Connection ~ 5150 4300
+Connection ~ 5700 3175
+Connection ~ 5925 4850
+Connection ~ 5925 5050
+Connection ~ 6375 3175
+Connection ~ 6375 4100
+Connection ~ 7100 3375
+NoConn ~ 7100 3725
+Wire Wire Line
+	4900 3050 4900 3150
+Wire Wire Line
+	4900 3450 4900 3550
+Wire Wire Line
+	4900 3850 4900 3950
+Wire Wire Line
+	4900 4250 4900 4300
+Wire Wire Line
+	4900 4300 5150 4300
+Wire Wire Line
+	5050 3700 5250 3700
+Wire Wire Line
+	5150 3900 5150 4300
+Wire Wire Line
+	5150 3900 5250 3900
+Wire Wire Line
+	5150 4300 5150 4350
+Wire Wire Line
+	5700 3125 5700 3175
+Wire Wire Line
+	5700 3175 5700 3500
+Wire Wire Line
+	5700 3175 6375 3175
+Wire Wire Line
+	5825 4850 5925 4850
+Wire Wire Line
+	5825 5050 5925 5050
+Wire Wire Line
+	5925 4800 6025 4800
+Wire Wire Line
+	5925 4850 5925 4800
+Wire Wire Line
+	5925 4900 5925 4850
+Wire Wire Line
+	5925 5000 6025 5000
+Wire Wire Line
+	5925 5050 5925 5000
+Wire Wire Line
+	5925 5100 5925 5050
+Wire Wire Line
+	5950 4700 6025 4700
+Wire Wire Line
+	6025 4900 5925 4900
+Wire Wire Line
+	6025 5100 5925 5100
+Wire Wire Line
+	6150 3700 6200 3700
+Wire Wire Line
+	6150 3900 6200 3900
+Wire Wire Line
+	6200 3375 7100 3375
+Wire Wire Line
+	6200 3700 6200 3375
+Wire Wire Line
+	6200 3900 6200 4100
+Wire Wire Line
+	6200 4100 6375 4100
+Wire Wire Line
+	6375 3175 6375 3575
+Wire Wire Line
+	6375 3875 6375 4100
+Wire Wire Line
+	6375 4100 6725 4100
+Wire Wire Line
+	6600 3175 6375 3175
+Wire Wire Line
+	6900 3175 7100 3175
+Wire Wire Line
+	7025 4100 7100 4100
+Wire Wire Line
+	7100 3175 7100 3375
+Wire Wire Line
+	7100 3375 7100 3625
+Wire Wire Line
+	7100 3825 7100 4100
+Text Label 4900 3050 2    50   ~ 0
+ON
+Text Label 5950 4700 2    50   ~ 0
+ON
+$Comp
+L power:+5V #PWR0103
+U 1 1 00000000
+P 5700 3125
+F 0 "#PWR0103" H 5700 2975 50  0001 C CNN
+F 1 "+5V" H 5715 3295 50  0000 C CNN
+F 2 "" H 5700 3125 50  0001 C CNN
+F 3 "" H 5700 3125 50  0001 C CNN
+	1    5700 3125
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:+5V U?
+U 1 1 00000000
+P 5825 5050
+F 0 "U?" H 5825 4900 50  0001 C CNN
+F 1 "+5V" H 5840 5220 50  0000 C CNN
+F 2 "" H 5825 5050 50  0001 C CNN
+F 3 "" H 5825 5050 50  0001 C CNN
+	1    5825 5050
+	0    -1   -1   0   
+$EndComp
+$Comp
+L Device:L L1
+U 1 1 00000000
+P 6875 4100
+F 0 "L1" V 7061 4100 50  0000 C CNN
+F 1 "33uH" V 6970 4100 50  0000 C CNN
+F 2 "JBC_Coilcraft:MSS6132" H 6875 4100 50  0001 C CNN
+F 3 "~" H 6875 4100 50  0001 C CNN
+	1    6875 4100
+	0    -1   -1   0   
+$EndComp
+$Comp
+L power:GND #PWR0101
+U 1 1 00000000
+P 5150 4350
+F 0 "#PWR0101" H 5150 4100 50  0001 C CNN
+F 1 "GND" H 5155 4180 50  0000 C CNN
+F 2 "" H 5150 4350 50  0001 C CNN
+F 3 "" H 5150 4350 50  0001 C CNN
+	1    5150 4350
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR0102
+U 1 1 00000000
+P 5825 4850
+F 0 "#PWR0102" H 5825 4600 50  0001 C CNN
+F 1 "GND" H 5830 4680 50  0000 C CNN
+F 2 "" H 5825 4850 50  0001 C CNN
+F 3 "" H 5825 4850 50  0001 C CNN
+	1    5825 4850
+	0    1    1    0   
+$EndComp
+$Comp
+L Device:R R2
+U 1 1 00000000
+P 4900 3300
+F 0 "R2" H 4970 3345 50  0000 L CNN
+F 1 "3k3" H 4970 3255 50  0000 L CNN
+F 2 "Resistor_SMD:R_0603_1608Metric" V 4830 3300 50  0001 C CNN
+F 3 "~" H 4900 3300 50  0001 C CNN
+	1    4900 3300
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:R R3
+U 1 1 00000000
+P 4900 4100
+F 0 "R3" H 4970 4145 50  0000 L CNN
+F 1 "1k" H 4970 4055 50  0000 L CNN
+F 2 "Resistor_SMD:R_0603_1608Metric" V 4830 4100 50  0001 C CNN
+F 3 "~" H 4900 4100 50  0001 C CNN
+	1    4900 4100
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:R R1
+U 1 1 00000000
+P 6750 3175
+F 0 "R1" V 6956 3175 50  0000 C CNN
+F 1 "0R1" V 6865 3175 50  0000 C CNN
+F 2 "Resistor_SMD:R_1206_3216Metric" V 6680 3175 50  0001 C CNN
+F 3 "~" H 6750 3175 50  0001 C CNN
+	1    6750 3175
+	0    -1   -1   0   
+$EndComp
+$Comp
+L Diode:1N5819 D1
+U 1 1 00000000
+P 6375 3725
+F 0 "D1" V 6330 3805 50  0000 L CNN
+F 1 "1N5819" V 6420 3805 50  0000 L CNN
+F 2 "Diode_SMD:D_SMA" H 6375 3550 50  0001 C CNN
+F 3 "http://www.vishay.com/docs/88525/1n5817.pdf" H 6375 3725 50  0001 C CNN
+	1    6375 3725
+	0    1    1    0   
+$EndComp
+$Comp
+L Device:R_POT RV1
+U 1 1 00000000
+P 4900 3700
+F 0 "RV1" H 4830 3745 50  0000 R CNN
+F 1 "10k" H 4830 3655 50  0000 R CNN
+F 2 "Potentiometer_SMD:Potentiometer_Bourns_TC33X_Vertical" H 4900 3700 50  0001 C CNN
+F 3 "~" H 4900 3700 50  0001 C CNN
+	1    4900 3700
+	1    0    0    1   
+$EndComp
+$Comp
+L Connector_Generic:Conn_01x03 J1
+U 1 1 00000000
+P 7300 3725
+F 0 "J1" H 7380 3718 50  0000 L CNN
+F 1 "Conn_01x03" H 7380 3628 50  0000 L CNN
+F 2 "TerminalBlock:TerminalBlock_bornier-3_P5.08mm" H 7300 3725 50  0001 C CNN
+F 3 "~" H 7300 3725 50  0001 C CNN
+	1    7300 3725
+	1    0    0    1   
+$EndComp
+$Comp
+L Connector_Generic:Conn_01x05 J2
+U 1 1 00000000
+P 6225 4900
+F 0 "J2" H 6305 4943 50  0000 L CNN
+F 1 "Conn_01x05" H 6305 4853 50  0000 L CNN
+F 2 "JBC_mechanical:PinHeader_1x05_P2.54mm_Horizontal" H 6225 4900 50  0001 C CNN
+F 3 "~" H 6225 4900 50  0001 C CNN
+	1    6225 4900
+	1    0    0    -1  
+$EndComp
+$Comp
+L JBC_DiodesInc:AL8843Q U2
+U 1 1 00000000
+P 5700 3800
+F 0 "U2" H 5700 3527 50  0000 C CNN
+F 1 "AL8843Q" H 5700 3436 50  0000 C CNN
+F 2 "JBC_diodes:Diodes_SO-8EP" H 5700 3800 50  0001 C CNN
+F 3 "" H 5700 3800 50  0001 C CNN
+	1    5700 3800
+	1    0    0    -1  
+$EndComp
+$EndSCHEMATC

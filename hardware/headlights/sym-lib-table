@@ -1,0 +1,3 @@
+(sym_lib_table
+  (lib (name headlights-rescue)(type Legacy)(uri ${KIPRJMOD}/headlights-rescue.lib)(options "")(descr ""))
+)

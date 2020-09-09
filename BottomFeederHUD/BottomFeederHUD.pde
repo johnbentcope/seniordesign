@@ -7,6 +7,8 @@ import camera3D.Camera3D;
 import camera3D.generators.*;
 Camera3D camera3D;
 
+PFont f;
+
 PImage frontside; 
 PImage backside; 
 
@@ -54,6 +56,8 @@ void setup()
 
   camera3D.setBackgroundColor(255);
   camera3D.enableSaveFrame('s', "debug");
+  f = createFont("Lato-Heavy-48.vlw", 48);
+  textFont(f);
 }
 
 
@@ -74,19 +78,56 @@ void draw()
   background(0);
   int boxSize = 700;
   int zDepth = -800;
-  
   pushMatrix();
-  fill(255, 0, 0);
+  //fill(255, 0, 0);
   rotateY(-ro[1]);
   rotateZ(-ro[2]);
   rotateY(PI/2);
   rotateZ(PI/2);
+  fill(200,200,0);
   pushMatrix();
-  scale(-1,1,1);
+  translate(200,200,400);
+  rotateX((width/2+mouseX)*PI/width);  
+  rotateZ((width/2+mouseX)*PI/width);
+  box(50,50,100);
+  popMatrix();
+  
+  fill(255);
+  pushMatrix();
+  rotateY((width/2+mouseY)*4*PI/width);
+
+  pushMatrix();
+  translate(0, 0, 500);
+  rotateY(PI);
+  text("N", 0, 0);
+  popMatrix();
+  pushMatrix();
+  rotateY(HALF_PI);
+  translate(0, 0, 500);
+  rotateY(PI);
+  text("W", 0, 0);
+  popMatrix();
+  pushMatrix();
+  rotateY(PI);
+  translate(0, 0, 500);
+  rotateY(PI);
+  text("S", 0, 0);
+  popMatrix();
+  pushMatrix();
+  rotateY(HALF_PI + PI);
+  translate(0, 0, 500);
+  rotateY(PI);
+  text("E", 0, 0);
+  popMatrix();
+
+
+  popMatrix();
+  pushMatrix();
+  scale(-1, 1, 1);
   shape(screen(frontside));
   popMatrix();
   pushMatrix();
-  scale(1,1,-1);
+  scale(1, 1, -1);
   shape(screen(backside));
   popMatrix();
   popMatrix();
@@ -95,9 +136,9 @@ void draw()
 PShape screen(PImage image) {
   PShape ret;
   ret = createShape();
-  
+
   float step = image.height/20;
-  
+
   ret.setFill(color(0, 0, 20));
   ret.setStrokeWeight(2);
   ret.setStroke(color(255));
@@ -112,10 +153,10 @@ PShape screen(PImage image) {
       int ii = i+1;
       int jj = j+1;
 
-      ret.vertex( i*d, j*d,  scrZ(r,  i*d,  j*d),i*step+image.width/2, j*step+image.height/2);
-      ret.vertex(ii*d, j*d,  scrZ(r, ii*d,  j*d),ii*step+image.width/2, j*step+image.height/2);
-      ret.vertex(ii*d, jj*d, scrZ(r, ii*d, jj*d),ii*step+image.width/2, jj*step+image.height/2);
-      ret.vertex( i*d, jj*d, scrZ(r,  i*d, jj*d),i*step+image.width/2, jj*step+image.height/2);
+      ret.vertex( i*d, j*d, scrZ(r, i*d, j*d), i*step+image.width/2, j*step+image.height/2);
+      ret.vertex(ii*d, j*d, scrZ(r, ii*d, j*d), ii*step+image.width/2, j*step+image.height/2);
+      ret.vertex(ii*d, jj*d, scrZ(r, ii*d, jj*d), ii*step+image.width/2, jj*step+image.height/2);
+      ret.vertex( i*d, jj*d, scrZ(r, i*d, jj*d), i*step+image.width/2, jj*step+image.height/2);
     }
   }
 
