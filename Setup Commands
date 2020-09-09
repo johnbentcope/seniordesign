@@ -1,0 +1,28 @@
+----------------ROS---------------------------------
+---------------- Jetson Startup Code -----------
+
+ssh jetson@192.168.0.3
+Admin1!
+
+export ROS_IP=192.168.0.3
+roslaunch motor_driver rov.launch
+
+---------------- Pi Startup Code ------------
+
+export ROS_IP=192.168.0.2
+export ROS_MASTER_URI=http://192.168.0.3:11311/
+rosrun ds4_driver ds4_driver_node.py
+
+------------------GStreamer------------------------------
+---------------- Jetson Camera Startup Code -----------
+
+ssh jetson@192.168.0.3
+Admin1!
+
+gst-launch-1.0 nvarguscamerasrc sensor_id=0 sensor_mode=0 ! 'video/x-raw(memory:NVMM), width=816, height=616, framerate=21/1' ! videoconvert ! videoscale ! videorate ! omxh264enc control-rate=2 bitrate=4000000 ! 'video/x-h264, framerate=21/1, stream-format=byte-stream' ! rtph264pay mtu=1400 ! udpsink host=192.168.0.2 port=5000 sync=false async=false
+
+---------------- Pi Camera Startup Code ------------
+
+gst-launch-1.0 udpsrc port=5000 ! application/x-rtp,encoding-name=H264,payload=96 ! rtph264depay ! h264parse ! queue ! avdec_h264 ! xvimagesink sync=false async=false -e
+
+
